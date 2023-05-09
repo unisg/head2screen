@@ -56,3 +56,5 @@ Android:
 - [head2screen auf GitHub](https://github.com/unisg/head2screen)
 - [Projektvideo deutsch](https://youtu.be/FL9GKvcjw24)
 - [Projektvideo englisch](https://youtu.be/iKTDF_K0fzY)
+=======
+Current Test Release: https://github.com/unisg/head2screen/releases
