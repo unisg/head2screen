@@ -1,0 +1,491 @@
+{
+    "m_SelectedDeviceId": "11161FDD40036Y",
+    "m_SelectedPackage": {
+        "deviceId": "11161FDD40036Y",
+        "name": "com.DefaultCompany.Head2ScreenTracker",
+        "processId": 27182,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 24068,
+            "exited": true
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 25393,
+            "exited": true
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTrackerARCompanion",
+            "processId": 1562,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 5348,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 5928,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 7375,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 7962,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 8457,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 9020,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 9309,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 9687,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 10196,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 26648,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27098,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27560,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 31164,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 7003,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 7500,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 8243,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 9032,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 11452,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 12020,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 12828,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 13581,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 17364,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 23100,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 23691,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 25311,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 26544,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 26784,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27142,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 32353,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 2893,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 4235,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 24046,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 2978,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 4903,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 7206,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 8514,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 16595,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 17474,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 18569,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 21164,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 23545,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27362,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27693,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27948,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 28669,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 29254,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 29766,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 30339,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 4001,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 14941,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 16468,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 16974,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 17789,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 18375,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 18669,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 19008,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 20801,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 23962,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 24699,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 20654,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 9541,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 12038,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 15186,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 16202,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 16364,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 16638,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 23609,
+            "exited": false
+        },
+        {
+            "deviceId": "11161FDD40036Y",
+            "name": "com.DefaultCompany.Head2ScreenTracker",
+            "processId": 27182,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 2,
+        "Behavior": 0
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}
