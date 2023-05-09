@@ -24,7 +24,7 @@ A smartphone (currently Android only) tracks the user's head movements. Via WLAN
 ## Code
 
 The code is made available in this [GitHub repository](https://github.com/unisg/head2screen).
-
+.
 
 ## Requirements
 
