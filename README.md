@@ -71,6 +71,11 @@ The code is made available in this [GitHub repository](https://github.com/unisg/
 To toggle from head mode to mouse mode use the spoken command "mouse mode" and vice versa "head mode".
 
 
+## Contribution
+
+As this is a pilot and the ressouces of the current leading organizations are limited we are looking for contribution in development, maintenance and support. At the moment we are not able to track every issue right in time.
+
+
 ## Contact
 
 For inputs or questions use <head2screen@unisg.ch>.
