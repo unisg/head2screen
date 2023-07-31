@@ -11,6 +11,8 @@ namespace Head2ScreenMagnifier.Core
 
         private bool stopListening = false;
 
+        private NLog.Logger logger = null;
+
         #endregion
 
         #region Constructor
@@ -25,6 +27,8 @@ namespace Head2ScreenMagnifier.Core
 
         public void StartServer(string ipAddressAsDottedString, int port, Action<int, int> reportProgress)
         {
+            this.logger = NLog.LogManager.GetCurrentClassLogger();
+
             IPAddress ipAddress = IPAddress.Parse(ipAddressAsDottedString);
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, port);
 
@@ -58,7 +62,10 @@ namespace Head2ScreenMagnifier.Core
                 handler.Shutdown(SocketShutdown.Both);
                 handler.Close();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                this.logger.Error(ex);
+            }
         }
 
         public void StopServer()

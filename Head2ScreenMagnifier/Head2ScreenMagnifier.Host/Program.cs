@@ -1,7 +1,6 @@
 using Head2ScreenMagnifier.Core;
 using Microsoft.CognitiveServices.Speech;
 using System.Configuration;
-using System.Drawing;
 using System.Numerics;
 
 namespace Head2ScreenMagnifier.Host
@@ -13,6 +12,8 @@ namespace Head2ScreenMagnifier.Host
         private static SocketServer socketServer = null;
         private static MouseServer mouseServer = null;
 
+        private static NLog.Logger logger = null;
+
         private static bool isRunning = true;
 
         /// <summary>
@@ -21,6 +22,9 @@ namespace Head2ScreenMagnifier.Host
         [STAThread]
         static void Main()
         {
+            // init logger
+            Program.logger = NLog.LogManager.GetCurrentClassLogger();
+
             // get settings
             float screenZoomFactor = float.Parse(ConfigurationManager.AppSettings["ScreenZoomFactor"]);
             float magnifierZoomFactor = float.Parse(ConfigurationManager.AppSettings["MagnifierZoomFactor"]);
@@ -37,7 +41,8 @@ namespace Head2ScreenMagnifier.Host
             extendFactor.X = float.Parse(ConfigurationManager.AppSettings["ExtendFactorX"]);
             extendFactor.Y = float.Parse(ConfigurationManager.AppSettings["ExtendFactorY"]);
             if (extendFactor.X == 0) extendFactor.X = 1;
-            if (extendFactor.Y == 0) extendFactor.Y = 1;    
+            if (extendFactor.Y == 0) extendFactor.Y = 1;
+
             // init Smoother
             MoveSmoother smoother = new MoveSmoother(
                      new Vector2(float.Parse(ConfigurationManager.AppSettings["ThresholdMoveStartX"]), float.Parse(ConfigurationManager.AppSettings["ThresholdMoveStartY"])),
@@ -52,18 +57,22 @@ namespace Head2ScreenMagnifier.Host
             mouseServer = new MouseServer();
 
             // init magnifier
-            magnifier = new Magnifier(magnifierZoomFactor, screenZoomFactor, magnifierWindowSizeFactor, monitorWidth_mm, monitorHeight_mm, trapMouse, mouseOffsetHorizontal, mouseOffsetVertical,extendFactor);
+            magnifier = new Magnifier(magnifierZoomFactor, screenZoomFactor, magnifierWindowSizeFactor, monitorWidth_mm, monitorHeight_mm, trapMouse, mouseOffsetHorizontal, mouseOffsetVertical, extendFactor);
+            Program.logger.Info("Magnifier initialized");
 
             // init socket server
             Task.Factory.StartNew(() =>
             {
                 socketServer = new SocketServer();
                 socketServer.StartServer(myIPAddress, myPort, (x, y) => { ReportProgress(new Vector2(x, y)); });
+                Program.logger.Info("Socketserver started");
             });
 
             // init report progress
             Task.Factory.StartNew(async () =>
             {
+                Program.logger.Info("Reporting initialized");
+
                 while (isRunning)
                 {
                     string data = string.Empty;
@@ -88,7 +97,7 @@ namespace Head2ScreenMagnifier.Host
 
                                 if (x != -1 && y != -1)
                                 {
-                                        Vector2 smoothPosition = smoother.Smooth(new System.Numerics.Vector2(x, y));
+                                    Vector2 smoothPosition = smoother.Smooth(new System.Numerics.Vector2(x, y));
                                 }
                             }
                         }
@@ -103,14 +112,18 @@ namespace Head2ScreenMagnifier.Host
             });
 
             #region Keyword recognition
+
             Task.Factory.StartNew(() =>
             {
                 StartKeywordRecognizer("Mouse-Mode.table");
+                Program.logger.Info("Mouse mode recognizer initialized");
             });
             Task.Factory.StartNew(() =>
             {
                 StartKeywordRecognizer("Head-Mode.table");
+                Program.logger.Info("Head mode recognizer initialized");
             });
+
             #endregion
 
             Application.ApplicationExit += Application_ApplicationExit;
@@ -122,24 +135,34 @@ namespace Head2ScreenMagnifier.Host
 
         private static void StartKeywordRecognizer(string modelName)
         {
-            var audioConfig = Microsoft.CognitiveServices.Speech.Audio.AudioConfig.FromDefaultMicrophoneInput();
-            var recognizer = new KeywordRecognizer(audioConfig);
-            recognizer.Recognized += (s, e) =>
+            try
             {
-                string mode = e.Result.Text;
-                if (mode.StartsWith("Mouse "))
+                var audioConfig = Microsoft.CognitiveServices.Speech.Audio.AudioConfig.FromDefaultMicrophoneInput();
+                var recognizer = new KeywordRecognizer(audioConfig);
+                recognizer.Recognized += (s, e) =>
                 {
-                    AppState.IsInMouseMode = true;
-                } else
+                    string mode = e.Result.Text;
+                    if (mode.StartsWith("Mouse "))
+                    {
+                        Program.logger.Info("Recognized 'Mouse' mode");
+                        AppState.IsInMouseMode = true;
+                    }
+                    else
+                    {
+                        Program.logger.Info("Recognized 'Head' mode");
+                        AppState.IsInMouseMode = false;
+                    }
+                };
+                var keywordModel = KeywordRecognitionModel.FromFile(modelName);
+                while (true)
                 {
-                    AppState.IsInMouseMode = false;
+                    var result = recognizer.RecognizeOnceAsync(keywordModel);
+                    result.Wait();
                 }
-            };
-            var keywordModel = KeywordRecognitionModel.FromFile(modelName);
-            while (true)
+            }
+            catch (Exception ex)
             {
-                var result = recognizer.RecognizeOnceAsync(keywordModel);
-                result.Wait();
+                Program.logger.Error(ex);
             }
         }
 
@@ -164,9 +187,16 @@ namespace Head2ScreenMagnifier.Host
 
         private static void ReportProgress(Vector2 pos)
         {
-            if (magnifier != null)
+            try
             {
-                magnifier.UpdateMagnifier(pos);
+                if (magnifier != null)
+                {
+                    magnifier.UpdateMagnifier(pos);
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.logger.Error(ex);
             }
         }
     }

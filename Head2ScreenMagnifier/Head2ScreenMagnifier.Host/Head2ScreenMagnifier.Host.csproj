@@ -12,11 +12,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="nlog.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="zoom_in.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.26.0" />
+    <PackageReference Include="NLog" Version="5.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
