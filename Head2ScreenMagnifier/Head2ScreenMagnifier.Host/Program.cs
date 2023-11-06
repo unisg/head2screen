@@ -1,20 +1,27 @@
 using Head2ScreenMagnifier.Core;
-using Microsoft.CognitiveServices.Speech;
 using System.Configuration;
 using System.Numerics;
+using System.Speech.Recognition;
 
 namespace Head2ScreenMagnifier.Host
 {
     internal static class Program
     {
+        #region Private Variables
+
         private static Magnifier magnifier = null;
 
         private static SocketServer socketServer = null;
+
         private static MouseServer mouseServer = null;
+
+        private static SpeechRecognitionEngine recognizer = null;
 
         private static NLog.Logger logger = null;
 
         private static bool isRunning = true;
+
+        #endregion
 
         /// <summary>
         /// The main entry point for the application.
@@ -113,16 +120,36 @@ namespace Head2ScreenMagnifier.Host
 
             #region Keyword recognition
 
-            Task.Factory.StartNew(() =>
+            try
             {
-                StartKeywordRecognizer("Mouse-Mode.table");
-                Program.logger.Info("Mouse mode recognizer initialized");
-            });
-            Task.Factory.StartNew(() =>
+                // use 'en-US' culture to support an 'international' audience
+                recognizer = new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US"));
+
+                Choices choices = new Choices();
+                choices.Add("head mode");
+                choices.Add("mouse mode");
+
+                GrammarBuilder grammarBuilder = new GrammarBuilder(choices);
+
+                // set the grammarBuilder culture - must match with SpeechRecognitionEngine culture
+                grammarBuilder.Culture = recognizer.RecognizerInfo.Culture;
+
+                Grammar grammar = new Grammar(grammarBuilder);
+                recognizer.LoadGrammar(grammar);
+
+                // add a handler for the speech recognized event 
+                recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(OnSpeechRecognized);
+
+                // configure input to the speech recognizer
+                recognizer.SetInputToDefaultAudioDevice();
+
+                // start asynchronous, continuous speech recognition. 
+                recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            }
+            catch (Exception ex)
             {
-                StartKeywordRecognizer("Head-Mode.table");
-                Program.logger.Info("Head mode recognizer initialized");
-            });
+                Program.logger.Error(ex);
+            }
 
             #endregion
 
@@ -131,39 +158,6 @@ namespace Head2ScreenMagnifier.Host
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run();
-        }
-
-        private static void StartKeywordRecognizer(string modelName)
-        {
-            try
-            {
-                var audioConfig = Microsoft.CognitiveServices.Speech.Audio.AudioConfig.FromDefaultMicrophoneInput();
-                var recognizer = new KeywordRecognizer(audioConfig);
-                recognizer.Recognized += (s, e) =>
-                {
-                    string mode = e.Result.Text;
-                    if (mode.StartsWith("Mouse "))
-                    {
-                        Program.logger.Info("Recognized 'Mouse' mode");
-                        AppState.IsInMouseMode = true;
-                    }
-                    else
-                    {
-                        Program.logger.Info("Recognized 'Head' mode");
-                        AppState.IsInMouseMode = false;
-                    }
-                };
-                var keywordModel = KeywordRecognitionModel.FromFile(modelName);
-                while (true)
-                {
-                    var result = recognizer.RecognizeOnceAsync(keywordModel);
-                    result.Wait();
-                }
-            }
-            catch (Exception ex)
-            {
-                Program.logger.Error(ex);
-            }
         }
 
         private static void Application_ApplicationExit(object sender, EventArgs e)
@@ -183,6 +177,12 @@ namespace Head2ScreenMagnifier.Host
                 socketServer.StopServer();
                 socketServer = null;
             }
+
+            if (recognizer != null)
+            {
+                recognizer.RecognizeAsyncStop();
+                recognizer = null;
+            }
         }
 
         private static void ReportProgress(Vector2 pos)
@@ -192,6 +192,29 @@ namespace Head2ScreenMagnifier.Host
                 if (magnifier != null)
                 {
                     magnifier.UpdateMagnifier(pos);
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.logger.Error(ex);
+            }
+        }
+
+        private static void OnSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            try
+            {
+                Program.logger.Info("Recognized: " + e.Result.Text);
+
+                string mode = e.Result.Text;
+
+                if (mode.ToLower().StartsWith("mouse"))
+                {
+                    AppState.IsInMouseMode = true;
+                }
+                else
+                {
+                    AppState.IsInMouseMode = false;
                 }
             }
             catch (Exception ex)
