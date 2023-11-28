@@ -29,7 +29,7 @@ Current Test Release: https://github.com/unisg/head2screen/releases
 ## Code
 
 The code is made available in this [GitHub repository](https://github.com/unisg/head2screen).
-.
+
 
 ## Requirements
 
@@ -50,13 +50,12 @@ The code is made available in this [GitHub repository](https://github.com/unisg/
 
 ### PC
 - After unpacking the file, the PC app can be started without installation by opening "Head2Screen Magnifier.exe".
-- The configuration of the PC app is stored in "Head2Screen Magnifier.dll.config".
-- Settings/scalierung (i.e. 100%) same as in config attribute "ScreenZoomFactor" (i.e. 1.0)
-- Settings/multiple displays "Extend these displays"
-- Settings/multiple displays check "Make this my main display"
+- The configuration of the PC app is stored in "Head2Screen Magnifier.dll.config". Make sure to restart the app on the PC after changing the config-file.
+- Find comments of the parameters in this [example of the configuration file](./assets/Head2Screen Magnifier.dll.config).
+- If using multiple displays, set the Windows Settings/multiple displays dropdown to "Extend these displays" and the below Settings/multiple displays checkbox to "Make this my main display".
 - IP-adress and port: Set it equal on the phone as in the config-file/attribute "MyIPAddress" and "MyPort". Use the IP-address which you find in cmd/ipconfig/Wireless_LAN.
 - Make sure to connect the PC with the same net (WLAN/LAN) as the phone is connected to.
-- Start the PC app first and then the phone app.
+- Start the PC app first before starting the phone app.
 - The PC app can be closed by pressing "alt+f4" (make sure to select the head2screen windows by pressing "alt-tab").
 
 
